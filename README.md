@@ -12,7 +12,7 @@ Site adapted from [EmporiumWeb](https://developer.apple.com/library/content/samp
 * Heroku account (free)
 * Git, Node and NPM installed
 
-## How to host the ApplePay Web example for free using Heroku:
+## How to host the ApplePay Web example for free using Heroku
 
 ### Sign up for [Heroku](https://www.heroku.com) (no CC needed)
 
