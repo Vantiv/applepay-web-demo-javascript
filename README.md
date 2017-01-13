@@ -68,7 +68,8 @@ If running locally using `npm run dev` then the server will spin up on port 4567
 
 Now deploy this project to Heroku by running `git push heroku master`. 
 
-You should now be able to hit `https://<name>.herokuapp.com` though ApplePay won't work yet.
+You should now be able to hit `https://<name>.herokuapp.com` though ApplePay won't work yet. You can also open the page by 
+running `heroku open`.
 
 If any changes are made to any files in the `lib` folder be sure to run `npm run build` before deploying to Heroku, in order to generate
 the files in the `dist` folder (which Heroku will run).
@@ -89,7 +90,7 @@ Finally, with all that done you can hit `https://<name>.herokuapp.com` and perfo
 * From Safari on an iOS 10 device with ApplePay support
 * From Safari on a Mac running macOS Sierra that [supports Handoff](https://support.apple.com/kb/PH25169?locale=en_US) (2012 and later hardware)
 
-After completing a transaction you should see, first, a registration id appear, followed by the results of the transaction to Vantiv IP.
+After completing a transaction you should see, first, a RegistrationId appear, followed by the results of the transaction to Vantiv IP.
 
 ## Apple Resources
 
