@@ -1,0 +1,97 @@
+/*
+Copyright (C) 2016 Vantiv. All Rights Reserved.
+
+Adapted from EmporiumWeb:
+https://developer.apple.com/library/content/samplecode/EmporiumWeb/Introduction/Intro.html
+ 
+Abstract:
+Styles the example site, as well as the Apple Pay button using -webkit-named-image
+*/
+
+div#wrapperHeader {
+ width:100%;
+ height:100px; /* height of the background image? */
+ text-align:center;
+}
+
+div#wrapperHeader div#header {
+ width:100%;
+ height:200px;
+ margin:0 auto;
+}
+
+
+
+body {
+	font-family: -apple-system, "Helvetica Neue", "Lucida Grande";
+	background: linear-gradient(180deg, #0099ff, #ffffff); 
+	background-repeat: no-repeat; 
+	background-attachment: fixed;
+}
+
+h2 {
+	font-weight: 300;
+	font-size: xx-large;
+}
+
+p {
+	font-weight: 300;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.apple-pay {
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.apple-pay-button {
+	-webkit-appearance: -apple-pay-button; 
+	-apple-pay-button-type: buy;
+	visibility: hidden;
+	display: inline-block;
+	width: 200px;
+	min-height: 30px;
+	border: 1px solid black;
+	background-image: -webkit-named-image(apple-pay-logo-black);
+	background-size: 100% calc(60% + 2px);
+	background-repeat: no-repeat;
+	background-color: white;
+	background-position: 50% 50%;
+	border-radius: 5px;
+	padding: 0px;
+	margin: 5px auto;
+	transition: background-color .15s;
+}
+
+.apple-pay-button.visible {
+	visibility: visible;
+}
+
+.apple-pay-button:active {
+	background-color: rgb(152, 152, 152);
+}
