@@ -1,20 +1,21 @@
-# Using Node and Heroku to demo ApplePay on the Web
+# Vantiv Integrated Payments Apple Pay on the Web demo using Node and Heroku
 
 Site adapted from [EmporiumWeb](https://developer.apple.com/library/content/samplecode/EmporiumWeb/Introduction/Intro.html)
 
 ## Requirements:
 
 * iOS 10 device that supports ApplePay (has TouchID or is an Apple Watch)
-* (Optionally) macOS Sierra computer that supports Handoff (mid 2012 or newer, requires Bluetooth LE support)
+* macOS Sierra computer that supports Handoff (mid 2012 or newer, requires Bluetooth LE support)
     * Development can be largely done even with an OS version below Sierra and without
     Handoff support, though testing on it won't work.
 * Apple developer account ($99/yr)
 * Heroku account (free)
 * Git, Node and NPM installed
+* Vantiv Integrated Payments Cert account
 
-## How to host the ApplePay Web example for free using Heroku
+## How to host for free using Heroku
 
-### Sign up for [Heroku](https://www.heroku.com) (no CC needed)
+### Sign up for [Heroku](https://www.heroku.com) (no credit card needed)
 
 Sign up then install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
 
@@ -44,10 +45,12 @@ Ignore all the stuff about push certificates, this works for converting our Merc
 
 ##### Basic steps:
 
-1. Import the .cer into Keychain, export both the certificate and private key as one .p12 format 
+1. Import the .cer into Keychain, export both the certificate and private key as a single .p12 format 
 file then run:
 
-`openssl pkcs12 -in <p12filename>.p12 -out <pemfilename>.pem -nodes -clcerts`
+```shell
+openssl pkcs12 -in <p12filename>.p12 -out <pemfilename>.pem -nodes -clcerts
+```
 
 2. Then put the pem file in `/certificates` named `applePayCert.pem`
 
@@ -81,7 +84,9 @@ Apple will provide a file with which to perform the validation.
 
 Place the file in the `.well-known` folder, commit the file with 
 
-`git add . && git commit -m 'added apple verification file'`
+```shell
+git add . && git commit -m 'added apple verification file'
+```
 
 then deploy to Heroku again with `git push heroku master`. Then return to your Apple Developer page and complete verification.
 
